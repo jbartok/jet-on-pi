@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.hazelcast.jet.pi'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'com.hazelcast.jet', name: 'hazelcast-jet', version: '4.2'
+    compile group: 'com.pi4j', name: 'pi4j-core', version: '1.1'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+application {
+    mainClassName = 'com.hazelcast.jet.pi.CpuTemperature'
+}
