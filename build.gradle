@@ -12,12 +12,13 @@ repositories {
 }
 
 dependencies {
-    compile group: 'com.hazelcast.jet', name: 'hazelcast-jet', version: '4.2'
+    compile group: 'com.hazelcast.jet', name: 'hazelcast-jet', version: '4.3-SNAPSHOT'
     compile group: 'com.pi4j', name: 'pi4j-core', version: '1.1'
+    compile group: 'org.hdrhistogram', name: 'HdrHistogram', version: '2.1.4'
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
 application {
-    mainClassName = 'com.hazelcast.jet.pi.CpuTemperature'
+    mainClassName = 'com.hazelcast.jet.pi.Latency'
 }

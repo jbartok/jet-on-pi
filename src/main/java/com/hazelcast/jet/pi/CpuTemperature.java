@@ -14,7 +14,7 @@ public class CpuTemperature {
 
     public static void main(String[] args) {
         StreamSource<Double> source = SourceBuilder.stream("cpu-temperatur", ctxt -> null)
-                .<Double>fillBufferFn((IGNORED, buf) -> SystemInfo.getCpuTemperature())
+                .<Double>fillBufferFn((IGNORED, buf) -> buf.add(((double) SystemInfo.getCpuTemperature())))
                 .build();
 
         Pipeline p = Pipeline.create();
